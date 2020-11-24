@@ -41,13 +41,7 @@ export class Scream extends Component {
     render() {
         const {classes,user:{authenticated, credentials: {handle}}} = this.props;
         dayjs.extend(relativeTime);
-        const likeButton = !authenticated ? (
-            <MyButton tip="Like">
-                <Link to="/login">
-                    <FavoriteBorder color="primary"/>
-                </Link>
-            </MyButton>
-        ) : (
+         (
             this.likedScream() ? (
                 <MyButton tip="Undo Like" onClick={this.unlikeScream}>
                     <FavoriteIcon color="primary"/>
