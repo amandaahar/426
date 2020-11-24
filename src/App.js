@@ -16,6 +16,7 @@ import {SET_AUTHENTICATED} from './redux/types';
 import {logoutUser, getUserData} from './redux/actions/userActions';
 import axios from "axios";
 
+axios.defaults.baseURL = "https://us-central1-recipeezy-bd890.cloudfunctions.net/api";
 const token = localStorage.FBIdToken;
 if(token){
   const decodedToken = jwtDecode(token);
